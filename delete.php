@@ -1,50 +1,18 @@
 <?php
-Process delete operation after confirmation
-if(isset($_GET["projectname"]) && !empty($_GET["projectname"])){
-    // Include connections file
-    require_once "admin/connections.php";
-    
-    // Prepare a delete statement
-    $sql = "DELETE FROM project WHERE projectname = ?";
-    
-    if($stmt = mysqli_prepare($con, $sql)){
-        // Bind variables to the prepared statement as parameters
-        mysqli_stmt_bind_param($stmt, "s", $param_projectname);
-        
-        // Set parameters
-        $param_projectname = trim($_POST["projectname"]);
-        
-        // Attempt to execute the prepared statement
-        if(mysqli_stmt_execute($stmt)){
-            // Records deleted successfully. Redirect to admin page
-            header("location: admin/admin.php");
-            exit();
-        } else{
-            echo "Oops! Something went wrong. Please try again later.";
-        }
-    }
-     
-    // Close statement
-    mysqli_stmt_close($stmt);
-    
-    // Close connection
-    mysqli_close($con);
-} else{
-    // Check existence of id parameter
-    if(empty(trim($_GET["projectname"]))){
-        // URL doesn't contain id parameter. Redirect to error page
-        header("location: error.php");
-        exit();
-    }
-// }
+$id=$_GET['id'];
+
+	include('admin/connections.php');
+	mysqli_query($con,"delete from `nursery` where id='$id'");
+	header('location:admin/admin.php');?>
+<?php
+
+$id=$_GET['projectname'];
+
+	include('admin/connections.php');
+	mysqli_query($con,"delete from `project` where projectname='$id'");
+	header('location:admin/admin.php');?>
 
 
-
-
-}
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +35,7 @@ if(isset($_GET["projectname"]) && !empty($_GET["projectname"])){
                     <h2 class="mt-5 mb-3">Delete Record</h2>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="alert alert-danger">
-                            <input type="hidden" id="sid" value="<?php echo trim($_GET["sid"]); ?>"/>
+                            <input type="hidden" id="id" value="<?php echo trim($_GET["id"]); ?>"/>
                             <p>Are you sure you want to delete this record?</p>
                             <p>
                                 <input type="submit" value="Yes" class="btn btn-danger">
