@@ -232,7 +232,7 @@
                     <div class="wbox">
                         <strong>Learn something </strong>
                         <p>An avenue to learn while actively getting work done.</p>
-                        <a href="../training.php" class="clr1-a">+</a>
+                        <a href="training.php" class="clr1-a">+</a>
                     </div>
 
                 </div>
@@ -248,7 +248,7 @@
                     <div class="wbox">
                         <strong>Gain a Skill </strong>
                         <p>Learn that vocation you have always dreamed of!</p>
-                        <a href="../training.php" class="clr2-a">+</a>
+                        <a href="training.php" class="clr2-a">+</a>
                     </div>
 
                 </div>
