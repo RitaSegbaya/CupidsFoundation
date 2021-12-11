@@ -1,0 +1,84 @@
+#text {
+    height: 25px;
+    border-radius: 5px;
+    padding: 4px;
+    border: solid thin #aaa;
+    width: 100%;
+}
+
+#button {
+    padding: 10px;
+    width: 100px;
+    color: white;
+    background-color: lightblue;
+    border: none;
+}
+
+#box {
+    background-color: rgb(54, 129, 199);
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 10%;
+    padding: 10px;
+}
+
+a:link,
+a:visited {
+    color: (internal value);
+    text-decoration: navajowhite;
+    cursor: auto;
+}
+
+a:hover {
+    text-decoration: paleturquoise;
+}
+
+
+/* .nav {
+    display: flex;
+} */
+
+nav>ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+nav>ul>li {
+    list-style: none;
+    display: inline-block;
+    margin: 100px;
+}
+
+nav>ul>li>a {
+    list-style: none;
+}
+
+button>a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+.concept {
+    margin: 30px 300px 30px 300px;
+}
+
+h2 {
+    text-align: center
+}
+
+.signup-form {
+    margin: 30px 400px 30px 400px;
+}
+
+.signup-form h2 {
+    margin: 30px 100px 30px 150px;
+}
